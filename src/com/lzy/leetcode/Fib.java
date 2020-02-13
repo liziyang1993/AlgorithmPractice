@@ -6,7 +6,7 @@ package com.lzy.leetcode;
  * */
 public class Fib {
     public static void main(String[] args){
-        System.out.println(new Fib().fib(4));
+        System.out.println(new Fib().fib(45));
     }
 
     public int fib(int N) {

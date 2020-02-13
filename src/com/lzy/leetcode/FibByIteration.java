@@ -5,7 +5,7 @@ package com.lzy.leetcode;
  * */
 public class FibByIteration {
     public static void main(String[] args){
-        System.out.println(new FibByIteration().fib(4));
+        System.out.println(new FibByIteration().fib(45));
     }
 
     public int fib(int N) {
@@ -16,7 +16,7 @@ public class FibByIteration {
             fibNminusTwo = fibNminusOne;
             fibNminusOne = fib;
         }
-        return fib;
+        return fib%1000000007;
     }
 }
 
