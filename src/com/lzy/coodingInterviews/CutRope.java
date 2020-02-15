@@ -29,6 +29,6 @@ public class CutRope {
     }
 
     public static void main(String[] args) {
-        System.out.println(new CutRope().cutRope(100));
+        System.out.println(new CutRope().cutRope(8));
     }
 }
