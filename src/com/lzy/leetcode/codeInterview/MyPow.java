@@ -1,5 +1,7 @@
 package com.lzy.leetcode.codeInterview;
-
+/**
+ * 剑指offer  面试题16. 数值的整数次方
+ * */
 public class MyPow {
     public double myPow(double x, int n) {
         if(n == 0) return 1;

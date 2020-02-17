@@ -1,5 +1,8 @@
 package com.lzy.leetcode.codeInterview;
-
+/**
+ * LeetCode上《剑指offer》 面试题07. 重建二叉树
+ * 核心思想：主要涉及到数组的处理，并通过递归的方式建立二叉树。
+ * */
 public class BuildTree {
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {

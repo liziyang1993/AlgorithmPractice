@@ -1,6 +1,7 @@
 package com.lzy.leetcode.codeInterview;
 /**
  * LeetCode上《剑指offer》 面试题14- I. 剪绳子
+ * 核心思想：DP解决
  * */
 public class CuttingRope {
 

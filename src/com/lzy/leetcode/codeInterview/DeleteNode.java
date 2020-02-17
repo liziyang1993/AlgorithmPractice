@@ -1,6 +1,7 @@
 package com.lzy.leetcode.codeInterview;
 /**
  * LeetCode上《剑指offer》 面试题18. 删除链表的节点
+ * 核心思想：在链表中找到待删除的节点，用下一个节点覆盖当前节点
  * */
 public class DeleteNode {
     public ListNode deleteNode(ListNode head, int val) {
