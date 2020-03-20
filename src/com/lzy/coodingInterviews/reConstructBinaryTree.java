@@ -1,15 +1,15 @@
 package com.lzy.coodingInterviews;
 
+import java.util.Scanner;
+
 /**
  * 剑指offer 面试题7 重建二叉树
  */
 public class reConstructBinaryTree {
 
     public static void main(String[] args) {
-        int[] preorder = {3, 9, 20, 15, 7};
-        int[] inorder = {9, 3, 15, 20, 7};
-        TreeNode root = new reConstructBinaryTree().reConstructBinaryTree(preorder, inorder);
-        System.out.println(root);
+
+
     }
 
     public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
