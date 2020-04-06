@@ -1,73 +1,46 @@
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.LockSupport;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 3 5 7
  */
 public class Main {
 
-    static int k = 6;
-
-    public static List<String> combine(String input, List<String> combineResult) {
-        choose(input, new StringBuilder(), 0, combineResult);
-        return combineResult;
+    public int ipToInt(String ip){
+        String[] nums = ip.split("\\.");
+        if (nums.length!=4) return 0;
+        int result = (Integer.parseInt(nums[0])<<24)
+                + (Integer.parseInt(nums[1])<<16)
+                + (Integer.parseInt(nums[2])<<8)
+                + Integer.parseInt(nums[3]);
+        return result;
     }
 
-    public static void choose(String input, StringBuilder builder, int index, List<String> combineResult) {
-        if (builder.length() == k) {
-            combineResult.add(builder.toString());
-            return;
-        }
-        for (int i = index; i < input.length(); i++) {
-            builder.append(input.charAt(i));
-            choose(input, builder, i + 1, combineResult);
-            builder.deleteCharAt(builder.length() - 1);
-        }
-    }
+    public String intToIp(int num){
 
-    public static Set<String> permute(char[] array, Set<String> permuteResult) {
-        backTrack(0, array, permuteResult);
-        return permuteResult;
-    }
-
-    public static void backTrack(int begin, char[] array, Set<String> permuteResult) {
-        if (begin == array.length - 1) {
-            permuteResult.add(String.valueOf(array));
-            return;
-        }
-        for (int i = begin; i < array.length; i++) {
-            char temp = array[begin];
-            array[begin] = array[i];
-            array[i] = temp;
-            backTrack(begin + 1, array, permuteResult);
-            temp = array[begin];
-            array[begin] = array[i];
-            array[i] = temp;
-        }
-    }
-
-    public static Date format(String value) {
-        SimpleDateFormat sdf = new SimpleDateFormat("HHmmss");
-        sdf.setLenient(false);
-        Date date = null;
-        try {
-            date = sdf.parse(value);
-            return date;
-        } catch (ParseException e) {
-            return null;
-        }
+        String ip = ((num >> 24) & 255) + "." + ((num >> 16) & 255) + "."
+                + ((num >> 8) & 255) + "." + (num & 255);
+        return ip;
     }
 
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        List<Integer> list1 = new ArrayList<>(list);
-
+        Main main = new Main();
+        try {
+            InetAddress ip = Inet4Address.getLocalHost();
+            System.out.println(ip.getHostAddress());
+            int num = main.ipToInt(ip.getHostAddress());
+            System.out.println(num);
+            System.out.println(main.intToIp(num));
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
     }
 
 }
