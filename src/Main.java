@@ -31,16 +31,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main main = new Main();
-        try {
-            InetAddress ip = Inet4Address.getLocalHost();
-            System.out.println(ip.getHostAddress());
-            int num = main.ipToInt(ip.getHostAddress());
-            System.out.println(num);
-            System.out.println(main.intToIp(num));
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
     }
 
 }
