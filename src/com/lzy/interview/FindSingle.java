@@ -7,8 +7,8 @@ public class FindSingle {
         while (left < right) {
             int midle = left + (right - left) / 2;
             if (value.charAt(midle) == value.charAt(midle + 1)) midle++;
-            if ((midle - left + 1) % 2 == 0) left = midle+1 ;
-            else right = midle-1 ;
+            if ((midle - left + 1) % 2 == 0) left = midle+1;
+            else right = midle-1;
         }
         return value.charAt(left);
     }
