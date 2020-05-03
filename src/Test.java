@@ -1,5 +1,5 @@
 import java.text.ParseException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Test {
 
@@ -36,7 +36,6 @@ public class Test {
                 return;
             }
         }
-        System.out.println(false);
     }
 
 }
