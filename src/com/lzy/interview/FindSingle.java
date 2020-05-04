@@ -14,7 +14,7 @@ public class FindSingle {
     }
 
     public static void main(String[] args) {
-        String str = "aabbrcceeddqqffgg";
+        String str = "aabcceeddqqffgg";
         System.out.println(new FindSingle().findSingle(str));
     }
 }
